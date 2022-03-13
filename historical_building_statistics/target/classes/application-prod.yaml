@@ -1,0 +1,29 @@
+server:
+  port: 8000
+
+web:
+  domain: http://localhost
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Yy123456.
+    url: jdbc:mysql://localhost:3306/historical_statistics?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=GMT%2B8
+    type: com.zaxxer.hikari.HikariDataSource
+    druid:
+      filters: stat
+      max-active: 1000
+      initial-size: 100
+      max-wait: 60000
+      min-idle: 500
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-return: false
+      test-on-borrow: false
+logging:
+  level:
+    root: info
+    com.ncu.building: info

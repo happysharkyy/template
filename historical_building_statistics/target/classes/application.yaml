@@ -1,0 +1,37 @@
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      enabled: true
+
+jwt:
+  # Bearer Token
+  tokenHead: 'Bearer '
+  # Authorization
+  tokenHeader: 'Authorization'
+  # Token失效时间 :60*60*24*7
+  expiration: 604800
+  # 私钥
+  secret: '2CF24FE663DBB493E56BA4E31BE6FD03'
+
+
+
+secure:
+  ignored:
+    urls: #安全路径白名单
+      - /swagger-ui.html
+      - /swagger-resources/**
+      - /swagger/**
+      - /**
+      - /**/*.css
+      - /**/*.png
+      - /**/*.ico
+      - /webjars/springfox-swagger-ui/**
+      - /ums/user/register
+      - /ums/user/login
+      - /ums/user/info
+      - /logout
+      - /ums/user/active
+      - /bulletin/**
+#      - /activity/all
